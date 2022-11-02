@@ -1,4 +1,28 @@
 {
+  "name": "imersao-notas-fiscais",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fernandopbarboza/imersao-notas-fiscais.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fernandopbarboza/imersao-notas-fiscais/issues"
+  },
+  "homepage": "https://github.com/fernandopbarboza/imersao-notas-fiscais#readme",
+  "dependencies": {
+    "next": "^12.2.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+{
   "dependencies": {
     "firebase": "^9.10.0"
   }
