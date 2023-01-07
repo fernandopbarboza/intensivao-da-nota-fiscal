@@ -15,6 +15,6 @@ jobs:
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_IMERSAO_NOTAS_FISCAIS }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_EXPERT_FISCAL_TRIBUTARIO }}'
           channelId: live
-          projectId: imersao-notas-fiscais
+          projectId: expert-fiscal-tributario
