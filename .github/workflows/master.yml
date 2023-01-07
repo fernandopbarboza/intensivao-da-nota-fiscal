@@ -27,7 +27,9 @@ jobs:
 
       # Runs npm
       - name: Build
-        run: npm run build
+        run: |
+          npm install
+          npm run build
       
       # Runs the Firebase Deploy
       - name: Firebase Deploy
