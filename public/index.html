@@ -1,89 +1,389 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="pt-br">
+<head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+    <title>Intensivão da Nota Fiscal</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="description" content="[21/11 - 23/11 - 25/11] - 3 Aulas 100% Online e Gratuitas (Com Certificado de Participação)" />
+    <meta name="keywords" content="Impostos, CFOP, NCM, CST,Fiscal, Tributario, Area Fiscal, Departamento Fiscal, Analista Fiscal, Assistente Fiscal, Nota Fiscal, NFe, NF" />
+    <meta name="author" content="Patrícia Ferreira" />
+	
+	<!-- Favicons -->
+	<link href="../../assets/img/logo-grupo-whatsapp.webp" rel="icon">
+	<link href="../../assets/img/logo-grupo-whatsapp.webp" rel="apple-touch-icon">	
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/9.15.0/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/9.15.0/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/9.15.0/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/9.15.0/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/9.15.0/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/9.15.0/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/9.15.0/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/9.15.0/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/9.15.0/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/9.15.0/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <!-- Facebook,Twitter and Whatsapp integration -->
+    <meta property="og:title" content="Intensivão da Nota Fiscal" />
+    <meta property="og:image" content="https://intensivao-da-nota-fiscal.web.app/assets/img/logo-grupo-whatsapp.png" />
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:url" content="https://intensivao-da-nota-fiscal.web.app/inscrever/org/" />
+    <meta property="og:site_name" content="Intensivão da Nota Fiscal" />
+    <meta property="og:description" content="[21/11 - 23/11 - 25/11] - 3 Aulas 100% Online e Gratuitas (Com Certificado de Participação)" />
+    
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="../../assets/css/styles.css" rel="stylesheet" />   	
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
-    </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
-
+   <!-- Facebook Pixel Code -->
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '256180552133136');
+        fbq('track', 'PageView');
     </script>
-  </body>
+    <noscript>
+        <img height="1" width="1" height="1" style="display:none"
+             src="https://www.facebook.com/tr?id=256180552133136&ev=PageView&noscript=1" />
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+
+</head>
+<body id="page-top">
+	<script>
+	  fbq('track', 'ViewContent');
+	</script>	
+	<!-- Firebase -->
+	<script type="module">
+	  // Import the functions you need from the SDKs you need
+	  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-app.js";
+	  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-analytics.js";
+	  // TODO: Add SDKs for Firebase products that you want to use
+	  // https://firebase.google.com/docs/web/setup#available-libraries
+
+	  // Your web app's Firebase configuration
+	  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+	  const firebaseConfig = {
+		apiKey: "AIzaSyBSpvLoRgCpBS0CyVP-9Ep2jnb7yyBXy1I",
+		authDomain: "intensivao-da-nota-fiscal.firebaseapp.com",
+		projectId: "intensivao-da-nota-fiscal",
+		storageBucket: "intensivao-da-nota-fiscal.appspot.com",
+		messagingSenderId: "990166954063",
+		appId: "1:990166954063:web:cf23f672bbdf7e73617a3a",
+		measurementId: "G-7J0PWNNPHQ"
+	  };
+
+	  // Initialize Firebase
+	  const app = initializeApp(firebaseConfig);
+	  const analytics = getAnalytics(app);
+	</script>
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-4"></div>
+                <div class="col-md-6">
+                <!-- Formulario de Inscrição -->
+                <div class="container contact-form" style="background-color:#010b17">
+                  <div class="col-md-12 text-center">
+                    <img src="../../assets/img/favico.webp" width="80%" height="80%" alt="Logo-Imersao"/>
+                    <h1 style="color:white;">21, 23 e 25/11</h1>
+                    <h3 class="masthead-subheading" style="color:white;">3 Aulas<br/>100% Online e Gratuitas<br/><div style="color:white;font-size:50%;"> ( Com Certificado de Participação )</div></h3>
+                    
+                    <h5 style="color:white;">Ensino profissionais que trabalham com NOTAS FISCAIS a DOMINAR os IMPOSTOS, os CFOPs, as NCMs e os CSTs de forma rápida e descomplicada</h5>
+                  </div>
+                  <form klicksend-form-id='8MuXG7B' method="post" action="//handler.klicksend.com.br/subscription/8MuXG7B">
+                    <div class="form-outline mb-4">
+                      <input class="form-control" type="text" name="first_name" id="first_name" placeholder="Nome" value="" >
+                    </div>
+
+                    <div class="form-outline mb-4">
+                      <input class="form-control" type="email" name="email" id="email" placeholder="Seu melhor e-mail" value="" required>
+                    </div>
+
+                    <div klicksend-gdpr-text style="font-size: 12px; color:white;">
+                      <!-- <p> Esses dados serão utilizados para entrarmos em contato com você e disponibilizarmos mais conteúdos e ofertas. Caso você não queira mais receber os nosso emails, cada email que você receber, incluirá ao final, um link que poderá ser usado para remover o seu email da nossa lista de distribuição. </p><p> Para mais informações, acesse:<a href="https://klickpages.com.br/politica-de-privacidade/" target="_blank" rel="noopener">https://klickpages.com.br/politica-de-privacidade/</a></p> -->
+                    </div>  
+                      
+                    <div class="row mb-4">
+                      <div class="col d-flex justify-content-center">
+                        <!-- Checkbox -->
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" name="gdpr" id="gdpr" placeholder="Concordo em receber os e-mails" value="Concordo em receber os e-mails" required>                     
+                          <label class="form-check-label" for="gdpr" style="color:white;"> Concordo em receber os e-mails </label>
+                          <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                            <input type="text" name="b_8MuXG7B" tabindex="-1" value="">
+                          </div>  
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-12 text-center">
+                      <button type="submit" class="btn btn-primary btn-block col-md-12"  style="color: blue;"><h3><strong>INSCREVA-SE</strong></h3></button>
+                    </div>
+                    <br/>
+                  </form>
+                </div>
+                <!-- Formulario de Inscrição -->          
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Services-->
+    <section class="page-section" id="services">
+        <div class="container">
+            <div class="text-center">
+                <h1 class="section-heading text-uppercase">[ O QUE É A Intensivão da Nota Fiscal? ]</h1>
+                <br/>
+                <h3 class="text-muted">A Intensivão da Nota Fiscal é um evento online e gratuito do movimento #ExpertFiscalTributário que vai acontecer entre 21 e 25 de Novembro onde você terá acesso a um intenso conteúdo para "mergulhar" nas Notas Fiscais. Nesse evento gratuito de 3 encontros, você terá:</h3>
+                <br/>
+              </div>
+            <div class="row text-left">
+                <div class="col-md-4">
+                    <div class="text-center">
+                      <img class="rounded-circle img-fluid" src="../../assets/img/about/12.webp"  width="200" height="200"  alt="Semanas de Aquecimento" />
+                      <h4 class="my-3">SEMANA DE AQUECIMENTO</h4>
+                      <p class="text-muted"><strong><p>Do dia 14 a 18 de Novembro</p></strong></p>
+                    </div>
+					          <p class="text-muted">Durante essa semana vai rolar um aquecimento para a Imersão e recomendo fortemente que você acompanhe tudo no Instagram e no Youtube.</p>
+                    <p class="text-muted">Vão ser dias de conteúdos exclusivos e incríveis, também vamos ter uma comunidade fechada do evento para que você possa estar em contato com mais pessoas interessadas em nos acompanhar nessa imersão, além de poder tirar todas as dúvidas que você quiser com o meu suporte.</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center">
+                      <img class="rounded-circle img-fluid" src="../../assets/img/about/11.webp"  width="200" height="200"  alt="..." />
+                      <h4 class="my-3">3 AULAS ONLINE E GRATUITAS</h4>
+                    </div>
+                    <p class="text-muted">Durante essa semana de evento você terá acesso a 3 aulas online e gratuitas comigo onde vou te ensinar as estratégias para DOMINAR os IMPOSTOS, os CFOPs, as NCMs e os CSTs de forma rápida e descomplicada.</p>
+                    <p class="text-muted">Após a aula 3 (No dia Seguinte), você receberá as instruções para emitir seu certificado de participação.</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center">
+                      <img class="rounded-circle img-fluid" src="../../assets/img/about/13.webp"  width="200" height="200"  alt="..." />
+                      <h4 class="my-3">APOSTILAS GRATUITAS DAS AULAS</h4>
+                    </div>
+                    <p class="text-muted">Além dessas 3 aulas, vou disponibilizar as Apostilas da Imersão com um conteúdo exclusivo das aulas e exercícios complementares através do grupo do Whatsapp e na Comunidade Exclusiva do Facebook.</p>
+                    <p class="text-muted">Então, é muito importante que você faça parte do grupo para ter acesso a esse material.</p>
+                    <p class="text-muted">Pra isso, basta cadastrar o e-mail que você usa mais para participar da Imersão e seguir o passo a passo que será apresentado para você participar do grupo do Whatsapp.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About-->
+    <section class="page-section bg-light" id="about">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="text-uppercase">Intensivão da Nota Fiscal</h2>
+                <br/>
+                <h3 class=" text-muted">O que será entregue para essa Imersão 100% Online e Gratuita.</h3>
+                <br/>
+            </div>
+            <ul class="timeline">
+                <li>
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="../../assets/img/about/1.webp"  width="200" height="200"  alt="..." /></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4>14/11 - 18/11</h4>
+                            <h4 class="subheading">Semana de Aquecimento</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p class="text-muted">Durante essa semana, a partir do dia 14 de Novembro vou fazer Lives diárias onde abordarei temas dessa Imersão!</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="timeline-inverted">
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="../../assets/img/about/2.webp" width="200" height="200" alt="..." /></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4>Facebook</h4>
+                            <h4 class="subheading">Comunidade Fechada</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p class="text-muted">Criei uma comunidade no facebook fechada para os participantes dessa Intensivão da Nota Fiscal, nela você vai poder tirar dúvidas e receber todas as demais informações.</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="../../assets/img/about/3.webp" width="200" height="200" alt="..." /></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4>WhatsApp</h4>
+                            <h4 class="subheading">Grupo Exclusivo</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p class="text-muted">Todas as comunicações referentes á Imersão assim como os conteúdos extras serão enviados em um grupo exclusivo do WhatsApp.</p>
+                            <p class="text-muted">Não se preocupe, apenas os administradores poderão enviar mensagens nesse grupo!</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="timeline-inverted">
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="../../assets/img/about/4.webp" width="200" height="200" alt="..." /></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4>Aula 1 - 21/11</h4>
+                            <h4 class="subheading">Iniciando em Notas Fiscais</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p class="text-muted">Conheça como eu sai do zero trabalhando com Notas Fiscais e Dominei os IMPOSTOS, os CFOPs, as NCMs e os CSTs, e veja como você também pode iniciar com NOTAS FISCAIS.</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="../../assets/img/about/5.webp" alt="..." /></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4>Aula 2 - 23/11</h4>
+                            <h4 class="subheading">Dominando as Notas Fiscais</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p class="text-muted">Analisando uma NOTA FISCAL, você vai ver as razões pelas quais é possivel "sim" Dominar os IMPOSTOS, os CFOPs, as NCMs e os CSTs, de forma rápida e descomplicada.</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="timeline-inverted">
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="../../assets/img/about/6.webp" width="200" height="200" alt="..." /></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4>Aula 3 - 25/11</h4>
+                            <h4 class="subheading">Expert em Notas Fiscais</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p class="text-muted">Conheça as habilidades certas para ser o Expert que há em você, trabalhando com NOTAS FISCAIS e dominando os IMPOSTOS, os CFOPs, as NCMs e os CSTs, de forma rápida e descomplicada.</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+					<div class="timeline-image"><img class="rounded-circle img-fluid" src="../../assets/img/about/7.webp" alt="..." /></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="subheading">Certificados e Pdfs</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p class="text-muted">Preparei um teste para você fazer ao final da Imersão e imprimir seu próprio certificado de participação.</p>
+                            <p class="text-muted"><br />O Material das aulas será disponibilizado em pdf dentro do grupo do exclusivo do WhatsApp.</p>
+                            <p class="text-muted"><br />E lembre-se <strong>"Expert em Notas Fiscais é o Iniciante que não desistiu"</strong>.</p>
+                        </div>
+                    </div>
+                    <!--"-->
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- Team-->
+    <section class="page-section" id="team">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Conheça a Patrícia Ferreira</h2>
+                <h3 class="section-subheading text-muted">Criadora do Expert Fiscal Tributário</h3>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="team-member">
+                        <img class="mx-auto rounded-circle" src="../../assets/img/team/patricia.webp"  width="80%" height="80%" alt="..." />
+                        <h4>Patrícia Ferreira</h4>
+                        <p class="text-muted">Expert Fiscal Tributário</p>
+                        <a class="btn btn-dark btn-social mx-2" href="https://www.instagram.com/expertfiscaltributario/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="https://fb.me/expertfiscaltributario" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="https://youtube.com/@expertfiscaltributario" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <p class="large text-muted">
+                        Patrícia Ferreira é Expert Fiscal Tributário com experiência em uma das maiores Multinacionais do Setor Químico no Planeta.
+                    </p>
+                    <p class="large text-muted">
+                        Seu networking a conectou com gestores de outras multinacionais nos setores Aéreo, Telecom, Químico e T.I
+                    </p>
+                    <p class="large text-muted">
+                        É a idealizadora da Intensivão da Nota Fiscal (Que já conta com mais de 1000 Alunos Certificados) e do método [Expert Fiscal 3K+] onde aplica técnicas de aprendizado acelerado e foca no dia a dia da NOTA FISCAL, o mundo real de um expert, com planilhas e sistemas que nenhum curso da área vai te ensinar a usar.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact-->
+    <section class="page-section" id="contact">
+        <div class="container">
+                <!-- Formulario de Inscrição -->
+                <div class="container contact-form"style="background-color:#010b17;">
+                  <div class="col-md-12 text-center">
+                    <img src="../../assets/img/favico.webp" width="80%" height="80%" alt="Logo-Imersao"/>
+                    <h1 style="color:white;">21, 23 e 25/11</h1>
+                    <h3 class="masthead-subheading" style="color:white;">3 Aulas<br/>100% Online e Gratuitas<br/><div style="color:white;font-size:50%;"> ( Com Certificado de Participação )</div></h3>
+                    
+                    <h5 style="color:white;">Ensino profissionais que trabalham com NOTAS FISCAIS a DOMINAR os IMPOSTOS, os CFOPs, as NCMs e os CSTs de forma rápida e descomplicada</h5>
+                  </div>
+                  <form klicksend-form-id='8MuXG7B' method="post" action="//handler.klicksend.com.br/subscription/8MuXG7B">
+                    <div class="form-outline mb-4">
+                      <input class="form-control" type="text" name="first_name" id="first_name" placeholder="Nome" value="" >
+                    </div>
+
+                    <div class="form-outline mb-4">
+                      <input class="form-control" type="email" name="email" id="email" placeholder="Seu melhor e-mail" value="" required>
+                    </div>
+
+                    <div klicksend-gdpr-text style="font-size: 12px; color:white;">
+                      <p> Esses dados serão utilizados para entrarmos em contato com você e disponibilizarmos mais conteúdos e ofertas. Caso você não queira mais receber os nosso emails, cada email que você receber, incluirá ao final, um link que poderá ser usado para remover o seu email da nossa lista de distribuição. </p><p> Para mais informações, acesse:<a href="https://klickpages.com.br/politica-de-privacidade/" target="_blank" rel="noopener">https://klickpages.com.br/politica-de-privacidade/</a></p> 
+                    </div>  
+                      
+                    <div class="row mb-4">
+                      <div class="col d-flex justify-content-center">
+                        <!-- Checkbox -->
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" name="gdpr" id="gdpr" placeholder="Concordo em receber os e-mails" value="Concordo em receber os e-mails" required>                     
+                          <label class="form-check-label" for="gdpr" style="color:white;"> Concordo em receber os e-mails </label>
+                          <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                            <input type="text" name="b_8MuXG7B" tabindex="-1" value="">
+                          </div>  
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-12 text-center">
+                      <button type="submit" class="btn btn-primary btn-block col-md-12"  style="color: blue;"><h3><strong>INSCREVA-SE</strong></h3></button>                      
+                    </div>
+                    <br/>
+                  </form>
+                </div>
+                <!-- Formulario de Inscrição -->
+        </div>
+    </section>
+    <!-- Footer-->
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 text-lg-start">&copy; 2022 - Expert Fiscal Tributário</div>
+                <div class="col-lg-4 my-3 my-lg-0">
+                    <a class="btn btn-dark btn-social mx-2" href="https://www.instagram.com/expertfiscaltributario/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="https://fb.me/expertfiscaltributario" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="https://bit.ly/YoutubeExpertFiscal" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <a class="link-dark text-decoration-none me-3" href="https://expertfiscaltributario.com.br/politica_privacidade.html">Política de Privacidade</a>
+                    <a class="link-dark text-decoration-none" href="https://expertfiscaltributario.com.br/termos_uso.html">Termos de Uso</a>
+                </div>
+            </div>
+        </div>
+    </footer>   
+
+    <!-- Font Awesome icons (free version)-->
+  <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script> 
+	<!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="../../assets/js/scripts.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Ads: 974189955 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-974189955"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'AW-974189955');
+    </script>
+    <!-- Global site tag (gtag.js) - Google Ads: 974189955 -->    
+</body>
 </html>
