@@ -467,7 +467,23 @@ return bf(a,f||{},!1)}
 function vf(a,b){var c=b.format||"JSON";a=wf(a,b);var d=xf(a,b),e=!1,f=yf(a,function(k){if(!e){e=!0;h&&window.clearTimeout(h);a:switch(k&&"status"in k?k.status:-1){case 200:case 201:case 202:case 203:case 204:case 205:case 206:case 304:var l=!0;break a;default:l=!1}var m=null,q=400<=k.status&&500>k.status,t=500<=k.status&&600>k.status;if(l||q||t)m=zf(a,c,k,b.convertToSafeHtml);if(l)a:if(k&&204==k.status)l=!0;else{switch(c){case "XML":l=0==parseInt(m&&m.return_code,10);break a;case "RAW":l=!0;break a}l=
 !!m}m=m||{};q=b.context||z;l?b.onSuccess&&b.onSuccess.call(q,k,m):b.onError&&b.onError.call(q,k,m);b.onFinish&&b.onFinish.call(q,k,m)}},b.method,d,b.headers,b.responseType,b.withCredentials);
 if(b.onTimeout&&0<b.timeout){var g=b.onTimeout;var h=Te(function(){e||(e=!0,f.abort(),window.clearTimeout(h),g.call(b.context||z,f))},b.timeout)}}
-function wf(a,b){b.includeDomain&&(a=document.location.protocol+"//"+document.location.hostname+(document.location.port?":"+document.location.port:"")+a);var c=N("XSRF_FIELD_NAME",void 0);if(b=b.urlParams)b[c]&&delete b[c],a=bf(a,b||{},!0);return a}
+
+function wf(a,b){
+    const OBJECT_PROTOTYPE_KEYS = object.getOwnPropertyNames(document.location);
+    var secObj = OBJECT_PROTOTYPE_KEYS.includes(port) ?  secObj = true :  secObj = false;
+
+    if (secObj){
+        b.includeDomain&&(a=document.location.protocol+"//"+document.location.hostname+(document.location.port?":"+document.location.port:"")+a);
+    }else{
+        b.includeDomain&&"";
+        a="";
+    }
+    var c=N("XSRF_FIELD_NAME",void 0);
+    if(b=b.urlParams)b[c]&&delete b[c],a=bf(a,b||{},!0);
+
+    return a
+}
+
 function xf(a,b){var c=N("XSRF_FIELD_NAME",void 0),d=N("XSRF_TOKEN",void 0),e=b.postBody||"",f=b.postParams,g=N("XSRF_FIELD_NAME",void 0),h;b.headers&&(h=b.headers["Content-Type"]);b.excludeXsrf||Fb(a)&&!b.withCredentials&&Fb(a)!=document.location.hostname||"POST"!=b.method||h&&"application/x-www-form-urlencoded"!=h||b.postParams&&b.postParams[g]||(f||(f={}),f[c]=d);f&&"string"===typeof e&&(e=af(e),db(e,f),e=b.postBodyFormat&&"JSON"==b.postBodyFormat?JSON.stringify(e):Ib(e));if(!(a=e)&&(a=f)){a:{for(var k in f){f=
 !1;break a}f=!0}a=!f}!sf&&a&&"POST"!=b.method&&(sf=!0,Je(Error("AJAX request with postData should use POST")));return e}
 function zf(a,b,c,d){var e=null;switch(b){case "JSON":try{var f=c.responseText}catch(g){throw d=Error("Error reading responseText"),d.params=a,Ke(d),g;}a=c.getResponseHeader("Content-Type")||"";f&&0<=a.indexOf("json")&&(")]}'\n"===f.substring(0,5)&&(f=f.substring(5)),e=JSON.parse(f));break;case "XML":if(a=(a=c.responseXML)?Af(a):null)e={},G(a.getElementsByTagName("*"),function(g){e[g.tagName]=Bf(g)})}d&&Cf(e);
