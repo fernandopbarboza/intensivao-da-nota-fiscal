@@ -21200,7 +21200,7 @@ weixin:
     - brands
   unicode: f1d7
   voted: false
-whatsapp:
+Telegram:
   changes:
     - '4.3'
     - 5.0.0
@@ -21211,7 +21211,7 @@ whatsapp:
     - brands
   unicode: f232
   voted: false
-whatsapp-square:
+Telegram-square:
   changes:
     - 5.0.0
   label: What's App Square
