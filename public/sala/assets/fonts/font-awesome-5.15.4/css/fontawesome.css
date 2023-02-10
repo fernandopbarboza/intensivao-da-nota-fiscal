@@ -4431,10 +4431,10 @@ readers do not read off random characters that represent icons */
 .fa-weixin:before {
   content: "\f1d7"; }
 
-.fa-whatsapp:before {
+.fa-Telegram:before {
   content: "\f232"; }
 
-.fa-whatsapp-square:before {
+.fa-Telegram-square:before {
   content: "\f40c"; }
 
 .fa-wheelchair:before {

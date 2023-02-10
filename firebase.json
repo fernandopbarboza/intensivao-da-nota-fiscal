@@ -1,6 +1,5 @@
 {
   "hosting": {
-    "site": "intensivao-da-nota-fiscal",
     "public": "public",
     "ignore": [
       "firebase.json",

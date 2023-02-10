@@ -56854,7 +56854,7 @@
       "brands"
     ]
   },
-  "whatsapp": {
+  "Telegram": {
     "changes": [
       "4.3",
       "5.0.0"
@@ -56888,7 +56888,7 @@
       "brands"
     ]
   },
-  "whatsapp-square": {
+  "Telegram-square": {
     "changes": [
       "5.0.0"
     ],
