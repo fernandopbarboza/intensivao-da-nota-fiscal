@@ -14,7 +14,4 @@ jobs:
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: >-
-            ${{ secrets.FIREBASE_SERVICE_ACCOUNT_INTENSIVAO_DA_NOTA_FISCA_2543E
-            }}
           projectId: intensivao-da-nota-fisca-2543e
