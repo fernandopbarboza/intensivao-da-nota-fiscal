@@ -8,7 +8,7 @@ firebase-debug.log*
 firebase-debug.*.log*
 
 # Firebase cache
-.firebase/hosting.cHVibGlj.cache
+.firebase/*.*
 
 # Firebase config
 .firebaserc
