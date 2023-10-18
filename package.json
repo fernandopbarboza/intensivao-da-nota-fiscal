@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/fernandopbarboza/intensivao-da-nota-fiscal/issues"
   },
-  "homepage": "https://github.com/fernandopbarboza/intensivao-da-nota-fiscal#readme"
+  "homepage": "https://github.com/fernandopbarboza/intensivao-da-nota-fiscal#readme",
+  "dependencies": {
+    "-": "^0.0.1"
+  }
 }
