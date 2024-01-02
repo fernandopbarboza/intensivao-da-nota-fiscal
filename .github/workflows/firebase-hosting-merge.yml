@@ -11,10 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: npm install --package-lock-only
-      - run: npm ci
+      - run: npm ci && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_MINI_CURSO_NOTAFISCAL }}'
           channelId: live
-          projectId: intensivao-da-nota-fisca-2543e
+          projectId: mini-curso-notafiscal
